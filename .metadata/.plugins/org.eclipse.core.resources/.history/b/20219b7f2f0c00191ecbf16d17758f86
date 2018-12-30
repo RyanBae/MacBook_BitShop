@@ -25,7 +25,7 @@
 <body>
 	<h1>계좌 생성 완료</h1>
 	<h3>계좌번호 : <%=accountNum %></h3>
-	<h3><a href="">계좌관리</a></h3>
+	
 	<h3><a href="../index.jsp">홈으로</a></h3>
 	
 </body>

@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>신규 계좌 개설</h1>
+	
+	<a href="open-result.jsp">
+	<input type="submit" id="btn" value="계좌생성"/>
+	</a>
+	
 
 </body>
 </html>
