@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+  <%
+  String id = request.getParameter("id");
+  String name = request.getParameter("name");
+  String pass = request.getParameter("pass");
+  String ssn = request.getParameter("ssn");
+  String hi = request.getParameter("height");
+  String wi = request.getParameter("weight");
+  
+  String year = "";
+  String month = "";
+  String day = "";
+  String gender = "";
+  String bmi = "";
+  
+  year = ssn.substring(0,2);
+  
+  %>
+    
+<!DOCTYPE html>              
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>가입정보</h1>
+	<h3>ID : <%=id %></h3>
+	<h3>이름 : <%=name %></h3>
+	<h3>비밀번호 : *******</h3>
+	<h3>생년월일 : <%=year %> 년 <%=month %> 월 <%=day %> 일 </h3>
+	<h3>성별 : <%=gender %></h3>
+	<h3>BMI : <%=bmi %></h3>
+	
+	<h3><a href="login-form.jsp">로그인</a></h3>
+	<h3><a href="../index.jsp">홈으로</a></h3>
+	
+</body>
+</html>
