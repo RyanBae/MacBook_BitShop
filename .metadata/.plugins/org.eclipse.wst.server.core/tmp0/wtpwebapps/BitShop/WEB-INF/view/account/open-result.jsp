@@ -1,32 +1,56 @@
-<%@page import="java.util.Random"%>
+
+<%@page import="domain.AccountBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%
-    
-    String accountNum = "";
-	Random random = new Random();
-	for(int i=0; i<5; i++){
-		if(i==2){
-			accountNum += random.nextInt(10)+"-";
-		} else {
-			accountNum += random.nextInt(10);
-		}
-	}
-    
-    
-    %>
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+	pageEncoding="UTF-8"%>
+<%@ include file="../home/head.jsp"%>
 <body>
-	<h1>계좌 생성 완료</h1>
-	<h3>계좌번호 : <%=accountNum %></h3>
-	<h3><a href="">계좌관리</a></h3>
-	<h3><a href="../index.jsp">홈으로</a></h3>
-	
+	<%
+		System.out.println(" => open-result 입장");
+	%>
+	<table id="wrapper">
+		<tr>
+			<td colspan="2"><%@ include file="../home/header.jsp"%>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><%@ include file="../account/navi-bar.jsp"%>
+
+			</td>
+		</tr>
+		<tr style="height: 300px">
+			<td style="width: 30%"><%@ include
+					file="../account/side-menu.jsp"%></td>
+
+			<td colspan="2">
+
+				<div>
+					<%
+					AccountBean acc = (AccountBean)request.getAttribute("acc");
+					String accountNum = acc.getAccountNum();
+					String date = acc.getToday();
+					String money = String.valueOf(acc.getMoney());
+					
+					
+					/*
+						String date = request.getAttribute("date").toString();
+						System.out.println(date);
+						String money = request.getAttribute("money").toString();
+						System.out.println(money);
+						String accountNum = request.getAttribute("num").toString();
+						System.out.println(accountNum);
+						*/
+					%>
+					<b>계좌가 개설되었습니다.</b><br /> <br /> 날짜 :
+					<%=date%> <br />
+					계좌번호 :
+					<%=accountNum%>
+					<br /> 잔액 :
+					<%=money%><br />
+				</div>
+			</td>
+
+		</tr>
+	</table>
 </body>
 </html>
+

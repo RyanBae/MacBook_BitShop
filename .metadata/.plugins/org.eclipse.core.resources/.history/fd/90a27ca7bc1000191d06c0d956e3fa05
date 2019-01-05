@@ -1,0 +1,20 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<div>
+	<%
+		String date = request.getAttribute("date").toString();
+		System.out.println(date);
+		String accountNum = request.getAttribute("accountNum").toString();
+		System.out.println(accountNum);
+		String money = request.getAttribute("money").toString();
+		System.out.println(money);
+	%>
+	<b>계좌가 개설되었습니다.</b><br /> <br /> 날짜 :
+	<%=date%>
+	계좌번호 :
+	<%=accountNum%>
+	<br /> 잔액 :
+	<%=money%><br />
+</div>
