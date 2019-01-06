@@ -72,12 +72,15 @@ public class AccountController extends HttpServlet {
 			
 			//accountService.createAccountNum(money);
 			
-
+			System.out.println("page ::"+page);
 			Command.move(request, response, dir,page);
 			break;
+	
 		}
+		
+		
 	}
-
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

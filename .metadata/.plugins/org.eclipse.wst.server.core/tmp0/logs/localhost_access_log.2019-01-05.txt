@@ -353,3 +353,17 @@
 0:0:0:0:0:0:0:1 - - [05/Jan/2019:18:37:54 +0900] "GET /BitShop/account.do HTTP/1.1" 200 1844
 0:0:0:0:0:0:0:1 - - [05/Jan/2019:18:37:58 +0900] "GET /BitShop/account.do?money=500&cmd=open-account&page=open-result HTTP/1.1" 200 1722
 0:0:0:0:0:0:0:1 - - [05/Jan/2019:18:37:58 +0900] "GET /BitShop/resources/css/style.css HTTP/1.1" 404 1142
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /BitShop/ HTTP/1.1" 200 1085
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 1131
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /apple-touch-icon.png HTTP/1.1" 404 1119
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /favicon.ico HTTP/1.1" 404 1110
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 1131
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /apple-touch-icon.png HTTP/1.1" 404 1119
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /favicon.ico HTTP/1.1" 404 1110
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /BitShop/ HTTP/1.1" 200 1085
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 1131
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /apple-touch-icon.png HTTP/1.1" 404 1119
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /favicon.ico HTTP/1.1" 404 1110
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 1131
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /apple-touch-icon.png HTTP/1.1" 404 1119
+0:0:0:0:0:0:0:1 - - [05/Jan/2019:19:14:51 +0900] "GET /favicon.ico HTTP/1.1" 404 1110
