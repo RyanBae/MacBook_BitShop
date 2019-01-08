@@ -3,6 +3,7 @@ package domain;
 public class AccountBean {
 	private String accountNum, today ;
 	private int money;
+	
 	public String getAccountNum() {
 		return accountNum;
 	}

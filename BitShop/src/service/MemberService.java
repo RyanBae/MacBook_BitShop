@@ -2,21 +2,24 @@ package service;
 
 import java.util.ArrayList;
 
+import domain.MemberBean;
+
 public interface MemberService {
 //	public String id, name, pass, ssn;
 	/**
 	 * CREATE
 	 * */
-	public void createMembers(String id, String name, String pass, String ssn);
+	public void joinMember(MemberBean member);
+		
 	
 	/**
 	 * READ
 	 * */
-	public ArrayList[] list();
-	public ArrayList[] findById(String id);
-	public ArrayList[] findByName(String name);
+	public ArrayList<MemberBean> findByList();
+	public ArrayList<MemberBean> findByName(String name);
+	public MemberBean findById(String id);
+	public int countMembers();
 	public boolean existLogin(String id, String pass);
-	public String membersCount();
 	/**
 	 * UPDATE
 	 * */

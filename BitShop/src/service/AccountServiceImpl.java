@@ -1,5 +1,8 @@
 package service;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,15 +11,13 @@ import java.util.Random;
 import domain.AccountBean;
 
 public class AccountServiceImpl implements AccountService{
-private ArrayList<AccountBean> list;
-	
-	public AccountServiceImpl() {
-		list = new ArrayList<>();
-	}
-	
+
+	private static AccountServiceImpl instance = new AccountServiceImpl();
+	private AccountServiceImpl() {}
+	public static AccountServiceImpl getInstance() {return instance;}
 	
 	@Override
-	public String createAccountNum(int money) {
+	public void createAccountNum(int money) {
 		
 		AccountBean accountBean = new AccountBean();
 		accountBean.setAccountNum(AccNum());
@@ -25,11 +26,7 @@ private ArrayList<AccountBean> list;
 		
 		String accountNum = accountBean.getAccountNum();
 		System.out.println("확인!!:::"+accountNum);
-		list.add(accountBean);
-		return accountNum;
-		
 	}
-
 	@Override
 	public String AccNum() {
 		String accNum = "";
@@ -53,14 +50,9 @@ private ArrayList<AccountBean> list;
 
 	@Override
 	public AccountBean findByAccountNum(String accountNum) {
-		AccountBean accountBean = new AccountBean();
-		for(int i=0; i<list.size(); i++) {
-			if(list.get(i).getAccountNum().equals(accountNum))
-				accountBean = list.get(i);
-			break;
-		}
 		
-		return accountBean;
+
+		return null;
 	}
 
 	@Override
@@ -80,12 +72,6 @@ private ArrayList<AccountBean> list;
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return sdf.format(date);
-	}
-
-	@Override
-	public AccountBean today() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override

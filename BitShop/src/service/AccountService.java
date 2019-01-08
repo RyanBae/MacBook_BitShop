@@ -11,7 +11,7 @@ public interface AccountService {
 	/**
 	 * CREATE
 	 * */
-	public String createAccountNum(int money); //신규생성
+	public void createAccountNum(int money); //신규생성
 	public String AccNum(); //계좌번호
 	
 	/**
@@ -22,8 +22,6 @@ public interface AccountService {
 	public int countAccount();
 	public boolean existAccountNum(String accountNum);
 	public String findDate();//날짜
-	public AccountBean today(); 
-	
 	
 	/**
 	 * UPDATE

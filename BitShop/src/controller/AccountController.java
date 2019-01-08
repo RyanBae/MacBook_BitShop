@@ -22,8 +22,8 @@ public class AccountController extends HttpServlet {
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("======> 계좌 서블릿 입장");
-		AccountService accountService = new AccountServiceImpl();
-		AccountBean accountBean = new AccountBean();
+		
+		
 		String cmd = request.getParameter("cmd");
 		cmd = (cmd==null)? "move" : cmd;
 		System.out.println("cmd::" + cmd);
@@ -46,12 +46,10 @@ public class AccountController extends HttpServlet {
 			String money = request.getParameter("money");
 			System.out.println("돈은 ::"+money);
 			
-			String can= accountService.createAccountNum(Integer.parseInt(money));
-			System.out.println(can);
+		
 			
-			AccountBean acc = accountService.findByAccountNum(can);
-			System.out.println("acc:::"+acc);
-			request.setAttribute("acc", acc);
+			
+//			request.setAttribute("acc", acc);
 			
 /*			String[] cans = can.split(",");
 			System.out.println(cans[0]);
