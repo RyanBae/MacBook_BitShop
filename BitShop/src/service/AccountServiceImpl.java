@@ -43,7 +43,7 @@ public class AccountServiceImpl implements AccountService{
 
 
 	@Override
-	public ArrayList<AccountBean> findByAll() {
+	public ArrayList<AccountBean> findAccountByAll() {
 
 		return null;
 	}

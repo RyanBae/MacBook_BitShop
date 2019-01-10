@@ -1,0 +1,89 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import domain.MemberBean;
+
+public class MemberDaoImpl implements MemberDao{
+	private static MemberDaoImpl instance = new MemberDaoImpl();
+	private MemberDaoImpl() {}
+	public static MemberDaoImpl getInstance() {return instance;}
+	private Connection conn;
+	private Statement stmt;
+	private ResultSet rs;
+	
+	
+	@Override
+	public void insertMember(MemberBean member) {
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			conn = DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:59162:xe",
+					"oracle", "password");
+			stmt = conn.createStatement();
+			String sql = String.format("INSERT INTO member(id, name, pass, ssn)\n"
+					+ "VALUES('%s', '%s', '%s', '%s')",
+					member.getId(), member.getName(), member.getPass(), member.getSsn());
+			System.out.println("SQL :::"+sql);
+			//rs = stmt.executeQuery(sql);
+			if(stmt.executeUpdate(sql)==1) {
+				
+				System.out.println("회원가입 성공!!!");
+			}else {
+				System.out.println("회원가입 실패ㅠㅠ");
+			}
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+			
+		
+	}
+
+	@Override
+	public ArrayList<MemberBean> selectMembers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<MemberBean> selectByName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public MemberBean selectById() {
+		
+		
+		return null;
+	}
+
+	@Override
+	public int countMembers() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean existLogin(String id, String pass) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void updatePass(String id, String pass, String newpass) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteContent(String id, String pass) {
+		// TODO Auto-generated method stub
+		
+	}
+}

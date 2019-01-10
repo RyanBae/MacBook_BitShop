@@ -2,7 +2,12 @@ package service;
 
 import java.util.ArrayList;
 
+import domain.ArticleBean;
+
 public class ArticleServiceImpl implements ArticleService{
+	private static ArticleServiceImpl instance = new ArticleServiceImpl();
+	private ArticleServiceImpl() {}
+	public static ArticleServiceImpl getInstance() {return instance;}
 
 	@Override
 	public void createArticles(String seq, String title, String content, String writer, String regdate) {
@@ -11,19 +16,19 @@ public class ArticleServiceImpl implements ArticleService{
 	}
 
 	@Override
-	public ArrayList[] list() {
+	public ArrayList<ArticleBean> findArticlesBylist() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList[] findByTitle(String title) {
+	public ArrayList<ArticleBean> findArticlesByTitle(String title) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList[] findByWriter(String writer) {
+	public ArticleBean findArticleByWriter(String writer) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -41,13 +46,13 @@ public class ArticleServiceImpl implements ArticleService{
 	}
 
 	@Override
-	public void updateContent(String title, String writer, String newcontent) {
+	public void changeContent(String title, String writer, String newcontent) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteContent(String seq, String writer) {
+	public void removeContent(String seq, String writer) {
 		// TODO Auto-generated method stub
 		
 	}

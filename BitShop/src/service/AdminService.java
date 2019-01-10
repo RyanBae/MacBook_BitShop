@@ -2,6 +2,8 @@ package service;
 
 import java.util.ArrayList;
 
+import domain.AdminBean;
+
 public interface AdminService {
 	//private String adminNum, name, pass, auth;
 		/**
@@ -12,17 +14,17 @@ public interface AdminService {
 		/**
 		 * READ
 		 * */
-		public ArrayList[] list();
-		public ArrayList[] findByName(String name);
-		public ArrayList[] findByAdminNum(String adminNum);
-		public boolean existLogin(String adminNum, String pass);
+		public ArrayList<AdminBean> findAdminsBylist();
+		public ArrayList<AdminBean> findAdminByName(String name);
+		public AdminBean findByAdminNum(String adminNum);
+		public boolean existAdmin(String adminNum, String pass);
 		public String adminsCount();
 		/**
 		 * UPDATE
 		 * */
-		public void updatePass(String adminNum, String pass, String newpass);
+		public void changePass(String adminNum, String pass, String newpass);
 		/**
 		 * DELETE
 		 * */
-		public void deleteMember(String adminNum, String pass);
+		public void removeMember(String adminNum, String pass);
 }

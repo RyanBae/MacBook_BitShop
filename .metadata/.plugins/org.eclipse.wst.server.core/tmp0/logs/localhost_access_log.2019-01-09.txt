@@ -41,3 +41,17 @@
 0:0:0:0:0:0:0:1 - - [09/Jan/2019:00:20:46 +0900] "GET /BitShop/member.do?id=%EB%82%98&name=%EB%82%98&pass=%EB%82%98&ssn=%EB%82%98&height=&weight=&cmd=join&dest= HTTP/1.1" 200 1541
 0:0:0:0:0:0:0:1 - - [09/Jan/2019:00:20:46 +0900] "GET /BitShop/resources/css/style.css HTTP/1.1" 404 1117
 0:0:0:0:0:0:0:1 - - [09/Jan/2019:00:20:47 +0900] "GET /favicon.ico HTTP/1.1" 404 1085
+127.0.0.1 - - [09/Jan/2019:20:43:00 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:43:03 +0900] "GET /BitShop/ HTTP/1.1" 200 1108
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:43:03 +0900] "GET /BitShop/resources/css/style.css HTTP/1.1" 404 1117
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:43:05 +0900] "GET /BitShop/member.do?dest=join-form HTTP/1.1" 200 1737
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:43:05 +0900] "GET /BitShop/resources/css/style.css HTTP/1.1" 404 1117
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:43:17 +0900] "GET /BitShop/member.do?id=%EB%8B%A4%EB%8B%A4%EB%8B%A4&name=%EB%8B%A4%EB%8B%A4%EB%8B%A4&pass=%EB%8B%A4%EB%8B%A4%EB%8B%A4&ssn=%EB%8B%A4%EB%8B%A4%EB%8B%A4&height=&weight=&cmd=join&dest= HTTP/1.1" 500 3481
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:43:17 +0900] "GET /favicon.ico HTTP/1.1" 404 1085
+127.0.0.1 - - [09/Jan/2019:20:51:45 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:51:45 +0900] "GET /BitShop/resources/css/style.css HTTP/1.1" 404 1117
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:51:45 +0900] "GET /BitShop/ HTTP/1.1" 200 1108
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:51:47 +0900] "GET /BitShop/resources/css/style.css HTTP/1.1" 404 1117
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:51:47 +0900] "GET /BitShop/member.do?dest=join-form HTTP/1.1" 200 1737
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:51:57 +0900] "GET /BitShop/member.do?id=%EB%8B%A4&name=%EB%8B%A4&pass=%EB%8B%A4&ssn=%EB%8B%A4&height=&weight=&cmd=join&dest= HTTP/1.1" 500 3481
+0:0:0:0:0:0:0:1 - - [09/Jan/2019:20:51:57 +0900] "GET /favicon.ico HTTP/1.1" 404 1085

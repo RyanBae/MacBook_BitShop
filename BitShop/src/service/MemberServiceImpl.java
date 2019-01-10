@@ -8,60 +8,55 @@ import domain.MemberBean;
 public class MemberServiceImpl implements MemberService{
 
 	private static MemberServiceImpl instance = new MemberServiceImpl();
-	private MemberServiceImpl() {}
+	private MemberServiceImpl() {
+		dao = MemberDaoImpl.getInstance();
+	}
 	public static MemberServiceImpl getInstance() {return instance;}
 
-	
+	MemberDaoImpl dao;
 	
 	@Override
-	public void joinMember(MemberBean member) {
+	public void creatMember(MemberBean member) {
 		System.out.println("맴버서비스 조인에 진입");
-		System.out.println("===컨트롤러에서넘어온 회원정보===");
-		System.out.println("ID :"+member.getId());
-		System.out.println("NAME :"+member.getName());
-		System.out.println("PASS :"+member.getPass());
-		System.out.println("SSN :"+member.getSsn());
-		
-		MemberDaoImpl.getInstance().insertMember(member);
+		dao.insertMember(member);
 	}
 
 	@Override
-	public ArrayList<MemberBean> findByList() {
+	public ArrayList<MemberBean> findMembersByList() {
 		ArrayList<MemberBean> list =  new ArrayList<>();
 		return list;
 	}
 
 	@Override
-	public ArrayList<MemberBean> findByName(String name) {
+	public ArrayList<MemberBean> findMembersByName(String name) {
 		ArrayList<MemberBean> list =  new ArrayList<>();
 		return list;
 	}
 
 	@Override
-	public MemberBean findById(String id) {
-		MemberBean member = new MemberBean();
-		
-		return member;
+	public MemberBean findMemberById(String id) {
+		System.out.println("맴버서비스임플 id 찾기 들어옴 ===");
+		return dao.selectMemberById(id);
 	}
 
 	@Override
 	public int countMembers() {
-		// TODO Auto-generated method stub
-		return 0;
+		int count = 0;
+		return count;
 	}
 
 	@Override
-	public boolean existLogin(String id, String pass) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean existMember(String id, String pass) {
+		boolean exist = false;
+		return exist;
 	}
 
 	@Override
-	public void updatePass(String id, String pass, String newpass) {
+	public void changePass(String id, String pass, String newpass) {
 	}
 
 	@Override
-	public void deleteContent(String id, String pass) {
+	public void removeContent(String id, String pass) {
 	}
 
 }

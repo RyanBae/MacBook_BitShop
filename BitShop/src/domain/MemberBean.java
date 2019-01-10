@@ -1,7 +1,7 @@
 package domain;
 
 public class MemberBean {
-	public String id, name, pass, ssn;
+	private String id, name, pass, ssn;
 
 	public String getId() {
 		return id;

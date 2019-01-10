@@ -13,8 +13,8 @@ public class Command {
 			throws ServletException, IOException {
 		
 		request.getRequestDispatcher(
-				(page.equals("index")) ? "index" + Constant.JSP : Constant.VIEW + dir + "/" + 
-						Constant.MAIN + Constant.JSP)
+				(page.equals("index")) ? "index" + Constant.JSP 
+						: Constant.VIEW + dir + "/" + Constant.MAIN + Constant.JSP)
 				.forward(request, response);
 	}
 

@@ -2,6 +2,8 @@ package service;
 
 import java.util.ArrayList;
 
+import domain.ArticleBean;
+
 public interface ArticleService {
 	//private String seq, title, content, writer, regdate;
 		/**
@@ -12,17 +14,17 @@ public interface ArticleService {
 		/**
 		 * READ
 		 * */
-		public ArrayList[] list();
-		public ArrayList[] findByTitle(String title);
-		public ArrayList[] findByWriter(String writer);
+		public ArrayList<ArticleBean> findArticlesBylist();
+		public ArrayList<ArticleBean> findArticlesByTitle(String title);
+		public ArticleBean findArticleByWriter(String writer);
 		public boolean existArticleCheck(String title, String writer);
 		public String articleCount();
 		/**
 		 * UPDATE
 		 * */
-		public void updateContent(String title, String writer, String newcontent);
+		public void changeContent(String title, String writer, String newcontent);
 		/**
 		 * DELETE
 		 * */
-		public void deleteContent(String seq, String writer);
+		public void removeContent(String seq, String writer);
 }

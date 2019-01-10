@@ -21,24 +21,33 @@ public class MemberController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		/**
+		 * 디폴트 값
+		 * cmd : move
+		 * dir : mamber ....
+		 * page : main
+		 * dest : none
+		 * */
+		
 		System.out.println("======> 맴버 서블릿 입장");
+		
 		MemberBean member = null;
 		String cmd = request.getParameter("cmd");
 		cmd = (cmd == null) ? "move" : cmd;
-		System.out.println("cmd :: "+cmd);
-		
-		String page = request.getParameter("page");
-		if(page == null) {page="main";}
-		System.out.println("page :: "+page);
 		
 		String dir = request.getParameter("dir");
 		if(dir == null) {
 			String sPath =  request.getServletPath();
-			System.out.println("spath :: "+ sPath);
 			sPath = sPath.replace(".do", "");
-			System.out.println("2.spath :: "+ sPath);
 			dir=sPath.substring(1);
-			System.out.println("2. dir ::"+dir);
+		}
+		
+		String page = request.getParameter("page");
+		if(page == null) {page="main";}
+		
+		String dest = request.getParameter("dest");
+		if(dest ==null) { 
+			dest = "NONE";
 		}
 		
 		switch(cmd) {
@@ -56,20 +65,17 @@ public class MemberController extends HttpServlet {
 			}
 			
 			request.setAttribute("name", "test");
-			request.setAttribute("compo", "login-success");
-			Command.move(request, response, dir,page);
+			request.setAttribute("dest", "welcome");
 			break;
+			
 		case "move" : 
 			System.out.println("case = move ,액션이 ="+cmd);
 			System.out.println("3====맴버서블릿에서 OUT");
-			String dest = request.getParameter("dest");
-			if(dest ==null) { 
-				dest = "NONE";
-			}
+			
 			request.setAttribute("dest", dest);
 			
-			Command.move(request, response, dir,page);
 			break;
+			
 		case "join" :
 			System.out.println("조인?? 들어왔어?");
 			member = new MemberBean();
@@ -77,24 +83,23 @@ public class MemberController extends HttpServlet {
 			member.setName(request.getParameter("name"));
 			member.setPass(request.getParameter("pass"));
 			member.setSsn(request.getParameter("ssn"));
+			System.out.println("id :::"+member.getId());
+			System.out.println("name :::"+member.getName());
+			System.out.println("pass :::"+member.getPass());
+			System.out.println("ssn :::"+member.getSsn());
 			
-			dir = request.getParameter("dir");
-			if(dir == null) {
-				String sPath =  request.getServletPath();
-				System.out.println("spath :: "+ sPath);
-				sPath = sPath.replace(".do", "");
-				System.out.println("2.spath :: "+ sPath);
-				dir=sPath.substring(1);
-				System.out.println("2. dir ::"+dir);
-			}
 			System.out.println("어디로 갈까"+dir+"/"+page);
-			MemberServiceImpl.getInstance().joinMember(member);
-			request.setAttribute("dest", "mypage");
-			request.setAttribute("member", MemberServiceImpl.getInstance().findById(member.getId()));
-			Command.move(request, response, dir, page);
+			MemberServiceImpl.getInstance().creatMember(member);
+			member = MemberServiceImpl.getInstance().findMemberById("id");
+			System.out.println(">>>>>> 조회결과 "+member.toString());
+			
+			request.setAttribute("member", member);
+			request.setAttribute("dest", dest);
+			//request.setAttribute("member", MemberServiceImpl.getInstance().findById(member.getId()));
 			
 			break;
 		}
+		Command.move(request, response, dir, page);
 
 	}
 

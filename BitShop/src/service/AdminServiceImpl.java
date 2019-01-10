@@ -2,7 +2,12 @@ package service;
 
 import java.util.ArrayList;
 
+import domain.AdminBean;
+
 public class AdminServiceImpl implements AdminService{
+	private static AdminServiceImpl instance = new AdminServiceImpl();
+	public AdminServiceImpl() {}
+	public static AdminServiceImpl getInstance() {return instance;}
 
 	@Override
 	public void createAdmins(String adminNum, String name, String pass, String auth) {
@@ -11,25 +16,25 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public ArrayList[] list() {
+	public ArrayList<AdminBean> findAdminsBylist() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList[] findByName(String name) {
+	public ArrayList<AdminBean> findAdminByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public ArrayList[] findByAdminNum(String adminNum) {
+	public AdminBean findByAdminNum(String adminNum) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean existLogin(String adminNum, String pass) {
+	public boolean existAdmin(String adminNum, String pass) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -41,13 +46,13 @@ public class AdminServiceImpl implements AdminService{
 	}
 
 	@Override
-	public void updatePass(String adminNum, String pass, String newpass) {
+	public void changePass(String adminNum, String pass, String newpass) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteMember(String adminNum, String pass) {
+	public void removeMember(String adminNum, String pass) {
 		// TODO Auto-generated method stub
 		
 	}
